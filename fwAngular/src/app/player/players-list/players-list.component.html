@@ -1,0 +1,42 @@
+<select [(ngModel)]="posicionSeleccionada" (change)="ngOnInit()">
+    <option value="0">Todos</option>
+    <option value="1">Porteros</option>
+    <option value="2">Defensas</option>
+    <option value="3">Medios</option>
+    <option value="4">Delanteros</option>
+    <option value="5">Entrenadores</option>
+</select>
+<br>
+<div *ngIf="players!=null; else espera">
+    <table border="1">
+        <tr>
+            <td style="text-align: center"><b>Nombre</b></td>
+            <td colspan="5" style="text-align: center"><b>Últimas jornadas</b></td>
+            <td><b>Puntos</b></td>
+        </tr>
+        <tr *ngFor="let player of players">
+            <td>{{player.name}}</td>
+            <td *ngFor="let fitness of player.fitness">
+                <div style="text-align: center" *ngIf="fitness == null">-</div>
+                <div style="text-align: center; background-color: red" *ngIf="fitness < 0">{{fitness}}</div>
+                <div style="text-align: center; background-color: darkorange" *ngIf="fitness >= 0 && fitness < 6">
+                    {{fitness}}
+                </div>
+                <div style="text-align: center; background-color: green" *ngIf="fitness >= 6 && fitness < 10">
+                    {{fitness}}</div>
+                <div style="text-align: center; background-color: deepskyblue" *ngIf="fitness >= 10">{{fitness}}</div>
+                <div style="text-align: center; background-color: crimson" *ngIf="fitness == 'sanctioned'">&nbsp;</div>
+                <div style="text-align: center; background-color: #fccf51; color: white" *ngIf="fitness == 'doubt'">
+                    <b>?</b>
+                </div>
+                <div style="text-align: center; background-color: red; color: white" *ngIf="fitness == 'injured'">
+                    <b>+</b></div>
+                <div style="text-align: center; background-color: #fccf51; color: white" *ngIf="fitness == 'discarded'">
+                    <b>x</b>
+                </div>
+            </td>
+            <td style="text-align: center">{{player.points}}</td>
+        </tr>
+    </table>
+</div>
+<ng-template #espera>Esperando datos...</ng-template>
