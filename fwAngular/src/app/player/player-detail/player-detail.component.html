@@ -1,43 +1,35 @@
 <div *ngIf="player!=null; else espera">
     <table border="1">
         <tr>
+            <td>Nombre</td>
+            <td>Equipo</td>
+            <td>Posición</td>
+            <td>Precio</td>
+            <td>Incremento</td>
+            <td>Status</td>
+            <td>P. jugados Casa</td>
+            <td>P. jugados Fuera</td>
+            <td colspan="5">Últimas jornadas</td>
+            <td>Puntos</td>
+            <td>Puntos Casa</td>
+            <td>Puntos Fuera</td>
+            <td>Puntos Última temporada</td>
+        </tr>
+        <tr>
             <td>{{player.name}}</td>
-        </tr>
-        <tr>
             <td>{{player.teamID}}</td>
-        </tr>
-        <tr>
-        <tr>
             <td>{{player.position}}</td>
-        </tr>
-        <tr>
             <td>{{player.price}}</td>
-        </tr>
-        <tr>
             <td>{{player.priceIncrement}}</td>
-        </tr>
-        <tr>
             <td>{{player.statusInfo}}</td>
-        </tr>
-        <tr>
             <td>{{player.playedHome}}</td>
-        </tr>
-        <tr>
             <td>{{player.playedAway}}</td>
-        </tr>
-        <tr>
-            <td>{{player.fitness}}</td>
-        </tr>
-        <tr>
+            <td *ngFor="let fitness of player.fitness">
+                <app-fitness [value]="fitness"></app-fitness>
+            </td>
             <td>{{player.points}}</td>
-        </tr>
-        <tr>
             <td>{{player.pointsHome}}</td>
-        </tr>
-        <tr>
             <td>{{player.pointsAway}}</td>
-        </tr>
-        <tr>
             <td>{{player.pointsLastSeason}}</td>
         </tr>
     </table>

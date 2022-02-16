@@ -8,12 +8,14 @@ import { FormsModule } from '@angular/forms';
 
 import { PlayersListComponent } from './player/players-list/players-list.component';
 import { PlayerDetailComponent } from './player/player-detail/player-detail.component';
+import { FitnessComponent } from './player/shared/fitness/fitness.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlayersListComponent,
-    PlayerDetailComponent
+    PlayerDetailComponent,
+    FitnessComponent
   ],
   imports: [
     BrowserModule,

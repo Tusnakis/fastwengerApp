@@ -1,0 +1,17 @@
+<div style="text-align: center" *ngIf="value == null">-</div>
+<div style="text-align: center; background-color: red" *ngIf="value < 0">{{value}}</div>
+<div style="text-align: center; background-color: darkorange" *ngIf="value >= 0 && value < 6">
+    {{value}}
+</div>
+<div style="text-align: center; background-color: green" *ngIf="value >= 6 && value < 10">
+    {{value}}</div>
+<div style="text-align: center; background-color: deepskyblue" *ngIf="value >= 10">{{value}}</div>
+<div style="text-align: center; background-color: crimson" *ngIf="value == 'sanctioned'">&nbsp;</div>
+<div style="text-align: center; background-color: #fccf51; color: white" *ngIf="value == 'doubt'">
+    <b>?</b>
+</div>
+<div style="text-align: center; background-color: red; color: white" *ngIf="value == 'injured'">
+    <b>+</b></div>
+<div style="text-align: center; background-color: #fccf51; color: white" *ngIf="value == 'discarded'">
+    <b>x</b>
+</div>

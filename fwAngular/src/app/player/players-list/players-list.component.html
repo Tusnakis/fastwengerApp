@@ -18,23 +18,7 @@
             <td><a routerLink="/player/{{player.slug}}">{{player.name}}</a>
             </td>
             <td *ngFor="let fitness of player.fitness">
-                <div style="text-align: center" *ngIf="fitness == null">-</div>
-                <div style="text-align: center; background-color: red" *ngIf="fitness < 0">{{fitness}}</div>
-                <div style="text-align: center; background-color: darkorange" *ngIf="fitness >= 0 && fitness < 6">
-                    {{fitness}}
-                </div>
-                <div style="text-align: center; background-color: green" *ngIf="fitness >= 6 && fitness < 10">
-                    {{fitness}}</div>
-                <div style="text-align: center; background-color: deepskyblue" *ngIf="fitness >= 10">{{fitness}}</div>
-                <div style="text-align: center; background-color: crimson" *ngIf="fitness == 'sanctioned'">&nbsp;</div>
-                <div style="text-align: center; background-color: #fccf51; color: white" *ngIf="fitness == 'doubt'">
-                    <b>?</b>
-                </div>
-                <div style="text-align: center; background-color: red; color: white" *ngIf="fitness == 'injured'">
-                    <b>+</b></div>
-                <div style="text-align: center; background-color: #fccf51; color: white" *ngIf="fitness == 'discarded'">
-                    <b>x</b>
-                </div>
+                <app-fitness [value]="fitness"></app-fitness>
             </td>
             <td style="text-align: center">{{player.points}}</td>
         </tr>
