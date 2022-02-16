@@ -1,0 +1,46 @@
+<div *ngIf="player!=null; else espera">
+    <table border="1">
+        <tr>
+            <td>{{player.name}}</td>
+        </tr>
+        <tr>
+            <td>{{player.teamID}}</td>
+        </tr>
+        <tr>
+        <tr>
+            <td>{{player.position}}</td>
+        </tr>
+        <tr>
+            <td>{{player.price}}</td>
+        </tr>
+        <tr>
+            <td>{{player.priceIncrement}}</td>
+        </tr>
+        <tr>
+            <td>{{player.statusInfo}}</td>
+        </tr>
+        <tr>
+            <td>{{player.playedHome}}</td>
+        </tr>
+        <tr>
+            <td>{{player.playedAway}}</td>
+        </tr>
+        <tr>
+            <td>{{player.fitness}}</td>
+        </tr>
+        <tr>
+            <td>{{player.points}}</td>
+        </tr>
+        <tr>
+            <td>{{player.pointsHome}}</td>
+        </tr>
+        <tr>
+            <td>{{player.pointsAway}}</td>
+        </tr>
+        <tr>
+            <td>{{player.pointsLastSeason}}</td>
+        </tr>
+    </table>
+    <a routerLink="/players">Volver</a>
+</div>
+<ng-template #espera>Esperando datos...</ng-template>

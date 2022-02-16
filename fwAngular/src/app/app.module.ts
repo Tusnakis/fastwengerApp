@@ -7,11 +7,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { PlayersListComponent } from './player/players-list/players-list.component';
+import { PlayerDetailComponent } from './player/player-detail/player-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlayersListComponent
+    PlayersListComponent,
+    PlayerDetailComponent
   ],
   imports: [
     BrowserModule,

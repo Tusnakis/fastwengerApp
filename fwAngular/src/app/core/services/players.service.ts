@@ -8,7 +8,11 @@ export class PlayersService {
 
   constructor(private http: HttpClient) { }
 
-  getPlayers(i: any) {
-    return this.http.get('http://localhost:3009/players/' + i);
+  getPlayers(idPosition: number) {
+    return this.http.get('http://localhost:3009/players/' + idPosition);
+  }
+
+  getPlayer(slug: string) {
+    return this.http.get('http://localhost:3009/player/' + slug);
   }
 }

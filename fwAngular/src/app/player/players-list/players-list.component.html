@@ -15,7 +15,8 @@
             <td><b>Puntos</b></td>
         </tr>
         <tr *ngFor="let player of players">
-            <td>{{player.name}}</td>
+            <td><a routerLink="/player/{{player.slug}}">{{player.name}}</a>
+            </td>
             <td *ngFor="let fitness of player.fitness">
                 <div style="text-align: center" *ngIf="fitness == null">-</div>
                 <div style="text-align: center; background-color: red" *ngIf="fitness < 0">{{fitness}}</div>
