@@ -1,5 +1,5 @@
 <div *ngIf="player!=null; else espera">
-    <table border="1">
+    <table class="table">
         <tr>
             <td>Nombre</td>
             <td>Equipo</td>
@@ -33,6 +33,6 @@
             <td>{{player.pointsLastSeason}}</td>
         </tr>
     </table>
-    <a routerLink="/players">Volver</a>
+    <a routerLink="/players/list">Volver</a>
 </div>
 <ng-template #espera>Esperando datos...</ng-template>

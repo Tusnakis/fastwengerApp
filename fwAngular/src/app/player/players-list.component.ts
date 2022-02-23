@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PlayersService } from '../../core/services/players.service';
+import { PlayersService } from '../core/services/players.service';
 
 @Component({
   selector: 'app-players-list',
@@ -9,12 +9,12 @@ import { PlayersService } from '../../core/services/players.service';
 export class PlayersListComponent implements OnInit {
 
   players: any;
-  posicionSeleccionada: number = 0;
+  selectedPosition: number = 0;
 
   constructor(private playersService: PlayersService) { }
 
   ngOnInit() {
-    this.playersService.getPlayers(this.posicionSeleccionada).subscribe((data: any) => {
+    this.playersService.getPlayers(this.selectedPosition).subscribe((data: any) => {
       this.players = data;
     })
   }

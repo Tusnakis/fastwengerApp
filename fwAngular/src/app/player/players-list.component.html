@@ -1,4 +1,4 @@
-<select [(ngModel)]="posicionSeleccionada" (change)="ngOnInit()">
+<select [(ngModel)]="selectedPosition" (change)="ngOnInit()">
     <option value="0">Todos</option>
     <option value="1">Porteros</option>
     <option value="2">Defensas</option>
@@ -8,14 +8,14 @@
 </select>
 <br>
 <div *ngIf="players!=null; else espera">
-    <table border="1">
+    <table class="table">
         <tr>
             <td style="text-align: center"><b>Nombre</b></td>
             <td colspan="5" style="text-align: center"><b>Últimas jornadas</b></td>
             <td><b>Puntos</b></td>
         </tr>
         <tr *ngFor="let player of players">
-            <td><a routerLink="/player/{{player.slug}}">{{player.name}}</a>
+            <td><a routerLink="/players/detail/{{player.slug}}">{{player.name}}</a>
             </td>
             <td *ngFor="let fitness of player.fitness">
                 <app-fitness [value]="fitness"></app-fitness>

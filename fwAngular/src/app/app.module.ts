@@ -3,25 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 
-import { PlayersListComponent } from './player/players-list/players-list.component';
-import { PlayerDetailComponent } from './player/player-detail/player-detail.component';
-import { FitnessComponent } from './player/shared/fitness/fitness.component';
+import { CoreModule } from './core/core.module';
+import { PlayerModule } from './player/player.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PlayersListComponent,
-    PlayerDetailComponent,
-    FitnessComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
+    CoreModule,
+    PlayerModule,
+    SharedModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
